@@ -1,0 +1,621 @@
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN"
+"http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html>
+<head>
+
+<title>Видеомир18+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport"
+  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-touch-fullscreen" content="yes"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+<style type="text/css">
+* {
+    font-family: "Open Sans", sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    background: #e2e2e2;
+}
+p {
+    padding: 0;
+    margin: 0;
+}
+/*wrapper styles*/
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    height: 100%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: url('img/bgmin.png') rgba(0,0,0,0);;
+}
+/*header */
+.header {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.header > div {
+    height: 100%;
+    padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.header .burger {
+    background: url('img/burger.png') 0 0 no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 32px;
+}
+.header .logo {
+    position: relative;
+}
+.logo span {font-size: 22px; color: #fff;}
+.age {
+    position: absolute;
+    left: 210px;
+    top: 9px;
+    bottom: 0;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+}
+.header p {
+    font-size: 13px;
+    color: rgb(187, 187, 187);
+}
+/*nav*/
+.nav {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    margin: 0 auto;
+    padding: 0 10px 7px 10px;
+}
+.nav > div {
+    float: left;
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #dc7900;
+    border-bottom: 1px solid #dc7900;
+    padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.nav > div > div {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.nav > div > div > p {
+    font-size: 15px;
+    color: #ffffff;
+}
+/* wrapper */
+.wrapper {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    background: #fff url('img/player.jpg') no-repeat;
+    background-size: cover;
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    z-index: 9;
+}
+.player-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    padding: 0 6px;
+    z-index: -1;
+}
+/* button */
+.btn-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.btn {
+    color: #fff;
+    background: rgba(0,0,0, .9);
+    padding: 0;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 255px;
+    height: 30vh;
+    max-height: 135px;
+    font-size: 35px!important;
+    font-weight: 400!important;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 9;
+}
+.price {
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    height: 22px;
+    padding: 0 10px;
+    white-space: nowrap;
+    z-index: 9;
+    color: rgb(100, 100, 100);
+    font-size: 17px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: url('img/bgmin.png');
+}
+/*sub_bottom*/
+.sub_bottom {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 5px 2px 5px;
+}
+.sub_bottom p {
+    font-size: 16px;
+    color: rgb(230, 230, 230);
+}
+/*bottom*/
+.bottom {
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    background: url('img/bgmin.png') rgba(0,0,0,0);
+    font-family: verdana,arial,times new roman;
+}
+.bottom .topside {
+    padding: 0 10px 0 10px;
+    width: 100%;
+    height: 65px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.bottom .topside > div {
+    position: relative;
+    height: 50px;
+    border: 1px solid #474747;
+    padding: 0 8px;
+    margin-right: 13px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.bottom .topside img {
+    margin: 5px;
+}
+.bottom .topside > div:first-child > p {
+    font-size: 14px;
+    color: rgb(175, 175, 176);
+}
+.bottom .topside > div:nth-child(2) {
+    padding: 0;
+}
+.bottom .topside > div:nth-child(2) p {
+    font-size: 17px;
+    color: rgb(255, 188, 63);
+    text-align: center;
+    border-bottom: 1px solid #ffb800;
+}
+.bottom .topside > div:nth-child(2) span {
+    display: inline-block;
+    font-size: 13px;
+    color: rgb(255, 188, 63);
+    padding-top: 2px;
+}
+.bottom .topside > div:last-child {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    border: 0;
+    margin: 0;
+}
+.bottom .topside > div:last-child > p {
+    font-size: 17px;
+    color: rgb(175, 175, 176);
+}
+.bottom .middleside {
+    height: 45px;
+    padding:  0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: verdana,arial,times new roman;
+}
+.middleside p {
+    font-size: 17px;
+    color: rgb(175, 175, 176);
+    margin-right: 7px;
+}
+.middleside span {
+    font-size: 12px;
+    color: rgb(208, 126, 4);
+    margin-right: 7px;
+    border: 1px solid #474747;
+    padding: 6px 10px;
+    background: #0e0e0f;
+    font-family: verdana,arial,times new roman;
+    border-radius: 6px;
+}
+.bottom .bottomside {
+    height: 25px;
+    padding: 0 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.bottom .bottomside p {
+    font-size: 17px;
+    color: rgb(175, 175, 176);
+    margin-right: 7px;
+}
+.bottom .bottomside span {
+    font-size: 14px;
+    color: rgb(207, 126, 4);
+    font-style: italic;
+    margin-right: 7px;
+}
+/*footer*/
+.footer {
+    position: relative;
+    padding: 1px 5px 5px;
+    border-top: 1px solid #2d2d2f;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    text-align: center;
+    color: #fff;
+    background: url('img/bgmin.png') rgba(0,0,0,0);
+}
+.footer p, .footer a {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    line-height: 0.9;
+}
+.footer a {
+    text-decoration: underline !important;
+}
+/*media queries*/
+/*width*/
+@media only screen and (max-width: 1024px) {
+    html, body {
+        background: #000000;
+    }
+}
+@media only screen and (max-width: 380px) {
+    .sub_bottom p {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 359px) {
+    .nav > div > div > p {
+        font-size: 14px;
+    }
+    .sub_bottom p {
+        font-size: 13px;
+    }
+    .bottom .topside > div {
+        margin-right: 7px;
+    }
+    .bottom .topside > div:last-child > p {
+        font-size: 14px;
+    }
+    .bottom .middleside {
+        padding: 0 5px;
+    }
+    .bottom .middleside p {
+        font-size: 14px;
+    }
+    .bottom.middleside span {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .bottom .bottomside {
+        padding: 0 5px;
+    }
+    .bottom .bottomside p {
+        font-size: 14px;
+    }
+    .bottom .bottomside span {
+        font-size: 14px;
+    }
+}
+/*height*/
+@media only screen and (max-height: 630px) {
+    .bottom .topside {
+        height: 55px;
+    }
+    .bottom .topside > div {
+        height: 45px;
+    }
+    .bottom .middleside {
+        height: 30px;
+    }
+}
+@media only screen and (max-height: 580px) {
+    .btn {
+        max-height: 115px;
+    }
+    .header {
+        height: 50px;
+    }
+    .nav {
+        height: 35px;
+        padding: 0 10px 5px 10px;
+    }
+}
+@media only screen and (max-height: 500px) {
+    .bottom .topside {
+        display: none;
+    }
+    .bottom.middleside span {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    .btn {
+        max-height: 95px;
+    }
+    .middleside span {
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+}
+@media only screen and (max-height: 450px) {
+    .nav {
+        display: none;
+    }
+}
+@media only screen and (max-height: 380px) {
+    .sub_bottom {
+        display: none;
+    }
+    .bottom {
+        padding-top: 20px;
+    }
+    .bottom .bottomside {
+        display: none;
+    }
+    .btn {
+        max-height: 90px;
+    }
+}
+@media only screen and (max-height: 300px) {
+    .bottom {
+        display: none;
+    }
+    .price {
+        border-radius: 11px;
+        background: rgba(0,0,0,0.8);
+    }
+    .btn-container {
+        bottom: 26px;
+    }
+    .btn {
+        max-height: 80px;
+    }
+}
+@media only screen and (max-height: 250px) {
+    .btn {
+        max-height: 65px;
+    }
+}
+/* iPhone 4 */
+@media screen and (device-aspect-ratio: 320/480) and (orientation: portrait) {
+}
+@media screen and (device-aspect-ratio: 320/480) and (orientation: landscape) {
+    body, html {
+        height: calc(100% + 1px);
+    }
+}
+/*iPhone 5:*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px)
+and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) and (orientation: portrait) {
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px)
+and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71) and (orientation: landscape) {
+    body, html {
+        height: calc(100% + 1px);
+    }
+}
+/*iPhone 6:*/
+@media screen and (device-aspect-ratio: 375/667) and (orientation: portrait) {
+}
+@media screen and (device-aspect-ratio: 375/667) and (orientation: landscape) {
+    body, html {
+        height: calc(100% + 1px);
+    }
+}
+/*iPhone 6 Plus:*/
+@media screen and (device-aspect-ratio: 414/736) and (orientation: portrait) {
+}
+@media screen and (device-aspect-ratio: 414/736) and (orientation: landscape) {
+    body, html {
+        height: calc(100% + 1px);
+    }
+}
+
+
+.footer {font-family: 'Open Sans', sans-serif; font-weight: 400;font-size: 16px;}
+.price {font-family: 'Open Sans', sans-serif; font-weight: 400;}
+
+</style>
+
+<style>
+.grecaptcha-badge {
+    box-shadow: none !important;
+}
+</style>
+<body>
+<div class="container">
+<div class="header">
+<div>
+    <div class="logo">
+        <span>Видеомир18+</span>
+        <p>Горячее видео в HD качестве</p>
+        <span class="age">18+</span>
+    </div>
+</div>
+<div>
+    <div class="burger"></div>
+</div>
+</div>
+<div class="nav">
+<div>
+    <div>
+        <p>Видео HD</p>
+        <p>Популярное</p>
+        <p>Любительское</p>
+    </div>
+</div>
+</div>
+<div class="wrapper">
+<div class="btn-container">
+    <a class="btn" href="{{ url }}">
+        <span>Смотреть</span>
+    </a>
+    <div class="price">3 дня бесплатно, далее 20 руб./сут.</div>
+</div>
+<div class="player-bottom">
+    <div></div>
+</div>
+</div>
+<div class="sub_bottom">
+<p></p>
+</div>
+<div class="bottom">
+<div class="topside">
+    <div>
+        <p>82</p>
+        <img src="img/heart.png" alt=""/>
+    </div>
+    <div>
+        <img src="img/fingerup.png" alt=""/>
+        <div>
+            <p>93%</p>
+            <span>Голосов: 571</span>
+        </div>
+        <img src="img/fingerdown.png" alt=""/>
+    </div>
+    <div>
+    </div>
+</div>
+<div class="middleside">
+    <p>Категории:</p>
+    <span>Лучшее</span>
+    <span>HD</span>
+    <span>Популярное</span>
+</div>
+<div class="bottomside">
+    <p>Тэги:</p>
+    <span>Новое,</span>
+    <span>Красивые,</span>
+    <span>Топ</span>
+</div>
+</div>
+<div class="footer">
+<p>Нажимая кнопку, вы активируете подписку на услугу "Видеомир18+"<br>
+    3 дня бесплатно, далее 20 руб./сут. <br>
+    Отключить подписку вы сможете бесплатно в любой момент.<br>
+    <a href="http://mob.beeline.ru/subs/videomir/regulations">Пользовательское соглашение</a></p>
+</div>
+</div>
+
+
+</body>
+</html>
