@@ -1,0 +1,589 @@
+
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1, user-scalable=yes" />
+	<meta name="format-detection" content="telephone=no" />
+	
+<title>Эротический портал</title>
+	<style type="text/css">
+	@-webkit-keyframes b {
+		0% {
+			background: #333;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center bottom;
+		}
+
+		100% {
+			background: #000;
+			background-image: url('../img/video.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center bottom;
+		}
+	}
+
+	@keyframes b {
+		0% {
+			background: #333;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center bottom;
+		}
+
+		100% {
+			background: #000;
+			background-image: url('../img/video.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center bottom;
+		}
+	}
+
+	@-webkit-keyframes l {
+		0% {
+			width: 1%
+		}
+
+		to {
+			width: 4%
+		}
+	}
+
+	@keyframes l {
+		0% {
+			width: 1%
+		}
+
+		to {
+			width: 4%
+		}
+	}
+
+	body,
+	html {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0;
+		margin: 0 auto;
+		text-align: center;
+		color: #222;
+		background: #fff;
+		overflow: hidden;
+	}
+
+	body {
+		font-family: 'Open Sans', Arial, sans-serif;
+		-webkit-text-size-adjust: 100%;
+	}
+
+	div {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex
+	}
+
+	.aic {
+		-webkit-box-align: center;
+		-moz-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center
+	}
+	.wrapper {
+		height: 100%;
+		width: 100%;
+		flex-direction: column;
+	}
+
+	.header {
+		width: 100%;
+		height: 9%;
+		min-height: 40px;
+		background: #333; /*rgba(84, 84, 84, .8);*/
+		font-weight: 700;
+		font-family: sans-serif;
+		color: #fff;
+		margin-bottom: 1%;
+	}
+	.offer {
+		width: 80%;
+		justify-content: flex-start;
+		padding-left: 15px;
+	}
+	.red {
+		display: block;
+		background: #b30002;
+		box-sizing: border-box;
+		margin: 0 5px;
+		padding: 0 5px;
+		border-radius: 5px;
+	}
+	.age {
+		width: 20%;
+		justify-content: flex-end;
+		padding-right: 15px;
+	}
+
+	.player-window {
+		height: 65%;
+		width: 100%;
+		background: #000;
+		justify-content: flex-end;
+		align-items: center;
+		flex-wrap: wrap;
+		flex-direction: column;
+		border-top: 2px solid #000;
+		background-repeat: no-repeat !important;
+	}
+	.player-window_name {
+		width: 100%;
+		padding: 5px;
+		box-sizing: border-box;
+		background: rgba(0, 0, 0, .4);
+		color: #fff;
+		text-align: left;
+		display: block;
+		padding-left: 10px;
+		font-family: sans-serif;
+		position: relative;
+	}
+	.player-window_name span {
+		background: rgba(0, 0, 0, .1);
+		padding: 2px 5px;
+		border-radius: 5px;
+		border: 1px solid #d3d3d3;
+	}
+	.player-window_name:before, .player-window_name:after {
+		position: absolute;
+		top: 2px;
+		padding-left: 24px;
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-size: 20px auto;
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.player-window_name:before {
+		content: 'Вчера';
+		position: absolute;
+		right: 74px;
+		background-image: url('../img/clock.png');
+	}
+	.player-window_name:after {
+		content: '11568';
+		position: absolute;
+		right: 5px;
+		background-image: url('../img/eye.png');
+	}
+
+	.player {
+		width: 90%;
+		height: 35px;
+		background-color: rgba(84, 84, 84, .6);
+		border-radius: 2px;
+		padding: 2px 15px;
+		font-size: 0;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		align-items: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		position: relative;
+		z-index: 0;
+		margin-top: auto;
+		left: 0;
+		bottom: 0;
+		opacity: 0;
+	}
+	.player__action-play {
+		border: 10px solid transparent;
+		border-right-width: 0;
+		border-left: 15px solid #fff
+	}
+	.player__action-pause {
+		min-width: 0;
+		width: 6px;
+		height: 16px;
+		border: 5px solid #fff;
+		border-bottom: none;
+		border-top: none
+	}
+	.player__progress {
+		margin: 0 15px;
+		width: 100%;
+		height: 5px;
+		background-color: rgba(255, 255, 255, .5)
+	}
+	.player__progress-stat {
+		background-color: rgba(255, 255, 255, .7);
+		width: 4%;
+		height: 100%
+	}
+	.player__volume {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center
+	}
+	.player__volume-icon {
+		display: block;
+		position: relative;
+		width: 6px;
+		height: 6px;
+		background-color: #fff;
+		margin-right: 12px
+	}
+	.player__volume-icon:after {
+		display: block;
+		content: "";
+		position: absolute;
+		left: 100%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		border: 10px solid transparent;
+		border-left-width: 0;
+		border-right: 10px solid #fff
+	}
+	.player__volume-icon-line {
+		position: absolute;
+		left: 125%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%) rotate(45deg);
+		-ms-transform: translate(-50%, -50%) rotate(45deg);
+		transform: translate(-50%, -50%) rotate(45deg);
+		z-index: 9;
+		width: 24px;
+		height: 2px;
+		-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+		box-shadow: 0 1px 0 rgba(0, 0, 0, .5);
+		background-color: #fff
+	}
+	.player__volume-progress {
+		margin-left: 10px;
+		width: 50px;
+		height: 2px;
+		background-color: rgba(255, 255, 255, .5)
+	}
+	.player__volume-progress-stat {
+		width: 5%;
+		height: 100%;
+		background-color: #fff
+	}
+	.player__full {
+		position: relative;
+		margin-left: 20px;
+		min-width: 13px;
+		width: 13px;
+		height: 13px
+	}
+	.player__full-item {
+		position: absolute;
+		width: 4px;
+		height: 4px;
+		background-color: #fff
+	}
+	.player__full-item:after {
+		content: "";
+		position: absolute;
+		left: 100%;
+		top: 50%;
+		-webkit-transform: translate(-1px, -50%);
+		-ms-transform: translate(-1px, -50%);
+		transform: translate(-1px, -50%);
+		border: 5px solid transparent;
+		border-right-width: 0;
+		border-left: 5px solid #fff
+	}
+	.player__full-item:nth-of-type(1) {
+		top: 0;
+		left: 0;
+		-webkit-transform: scaleX(-1) rotate(-45deg);
+		-ms-transform: scaleX(-1) rotate(-45deg);
+		transform: scaleX(-1) rotate(-45deg)
+	}
+	.player__full-item:nth-of-type(2) {
+		right: 0;
+		top: 0;
+		-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg)
+	}
+	.player__full-item:nth-of-type(3) {
+		right: 0;
+		bottom: 0;
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg)
+	}
+	.player__full-item:nth-of-type(4) {
+		left: 0;
+		bottom: 0;
+		-webkit-transform: scaleX(-1) rotate(45deg);
+		-ms-transform: scaleX(-1) rotate(45deg);
+		transform: scaleX(-1) rotate(45deg)
+	}
+
+	.btn {
+		width: 80%;
+		max-width: 320px;
+		height: 25%;
+		display: flex;
+		align-items: center;
+		background: rgba(0, 0, 0, .6);
+		justify-content: center;
+		text-decoration: none;
+		border-radius: 80px;
+		font-size: 35px;
+		color: #fff;
+		font-family: sans-serif;
+		font-weight: 700;
+		position: absolute;
+		border: 2px solid #fff;
+		z-index: 999;
+		padding-top: 7px;
+		margin-bottom: 0;
+	}
+
+	.icon,
+	.price {
+		position: relative;
+	}
+	.icon,
+	.icon:before {
+		display: block;
+		width: 40px;
+		height: 60px;
+	}
+	.icon:before {
+		content: '';
+		height: 0;
+		width: 0;
+		border: 15px transparent solid;
+		border-right-width: 0;
+		border-left-color: #fff;
+		position: absolute;
+		top: 14px;
+		left: 16px;
+	}
+	.price {
+		display: flex;
+		margin-top: 0;
+		z-index: 999;
+		width: 100%;
+		padding: 0 5px 3px;
+		color: #999;
+		font-size: 17px;
+		line-height: 1;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		margin-bottom: 35px;
+	}
+	.price-fill {
+		display: inline-block;
+		background: #e8e5e5;
+	}
+
+	.related, .rel {
+		display: flex;
+		flex-direction: row;
+		justify-content: center
+	}
+	.related {
+		margin: 0 auto;
+		flex-wrap: nowrap;
+		height: 15%;
+		align-items: flex-start;
+		width: 100%
+	}
+	.rel {
+		align-items: center;
+		width: 33.3%;
+		height: auto;
+		max-width: 200px;
+		min-width: 90px;
+	}
+	.rel img {
+		display: block;
+		width: 100%;
+	}
+
+	.footer {
+		font-size: 16px;
+		width: 100%;
+		height: 15%;
+		background: none;
+		width: 100%;
+		display: block;
+		flex-wrap: nowrap;
+		line-height: 0.8;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		color: #999;
+	}
+	.footer-fx {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding-bottom: 5px;
+		display: block;
+		background: #fff;
+		color: #999;
+		font-size: 16px;
+		line-height: 0.8;
+	}
+	.footer-fx a {
+		color: inherit;
+	}
+
+	@media screen and (orientation:portrait) and (max-height:350px) {
+		.footer {
+			min-height: 100px
+		}
+	}
+	@media screen and (max-width:320px) {
+		.footer {
+			font-size: 16px
+		}
+	}
+	@media only screen and (max-height:320px) {
+		.footer {
+			font-size: 16px;
+		}
+	}
+	@media screen and (min-width:1024px) and (min-height:768px) {
+		.player {
+			height: 80%
+		}
+
+		.footer {
+			min-height: 1;
+			height: 10%
+		}
+	}
+
+	.an {
+		-webkit-animation-delay: 1s;
+		animation-delay: 1s;
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+		-webkit-animation-fill-mode: forwards;
+		animation-fill-mode: forwards
+	}
+
+	.b {
+		-webkit-animation-name: b;
+		animation-name: b
+	}
+
+	.an2 {
+		-webkit-animation-duration: 4s;
+		animation-duration: 4s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both
+	}
+
+	.l {
+		-webkit-animation-name: l;
+		animation-name: l
+	}
+
+	@media only screen and (orientation: landscape) and (max-height: 320px) {
+		body,
+		html {
+			/*position: fixed*/
+		}
+	}
+
+	@media (orientation: landscape) and (min-width: 768px) {
+		.wrapper {
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.btn {
+			max-width: 480px;
+			border-radius: 120px;
+		}
+		.rel {
+			max-width: none;
+		}
+	}
+	</style>
+
+<style>
+.grecaptcha-badge {
+    box-shadow: none !important;
+}
+</style>
+
+<body>
+	<div class="wrapper aic">
+		<div class="header aic">
+			<div class="offer">Эротический<span class="red">портал</span></div>
+			<div class="age">18+</div>
+		</div>
+		<div class="player-window aic an b">
+			<div class="player-window_name"><span>Новинки</span> <span>Популярное</span></div>
+			<a id="sign" href="{{ url }}" class="btn">
+				<span class="text">Смотреть</span>
+				<span class="icon"></span>
+			</a>
+			<div class="player">
+				<i class="player__action-play"></i>
+				<div class="player__progress">
+					<div class="player__progress-stat an2 l"></div>
+				</div>
+				<div class="player__volume">
+					<div class="player__volume-icon">
+						<div class="player__volume-icon-line"></div>
+					</div>
+					<div class="player__volume-progress">
+						<div class="player__volume-progress-stat"></div>
+					</div>
+				</div>
+				<div class="player__full">
+					<i class="player__full-item"></i>
+					<i class="player__full-item"></i>
+					<i class="player__full-item"></i>
+					<i class="player__full-item"></i>
+				</div>
+			</div>
+		</div>
+		<div class="price">
+			<div class="price-fill">3 дня бесплатно, далее 20 руб./сут.</div>
+		</div>
+		<div class="related">
+			<div class="rel"><img src="../img/rel-1.jpg" alt="" /></div>
+			<div class="rel"><img src="../img/rel-2.jpg" alt="" /></div>
+			<div class="rel"><img src="../img/rel-3.jpg" alt="" /></div>
+		</div>
+		<div class="footer">&nbsp;</div>
+	</div>
+	<div class="footer-fx">
+		Нажимая кнопку, вы активируете подписку на услугу "Эротический портал"<br>
+            3 дня бесплатно, далее 20 руб./сут. <br>
+            Отключить подписку вы сможете бесплатно в любой момент.<br>
+            <a href="http://mob.beeline.ru/subs/eroportal/regulations">Пользовательское соглашение</a>
+	</div>
+
+
+</body>
+</html>
